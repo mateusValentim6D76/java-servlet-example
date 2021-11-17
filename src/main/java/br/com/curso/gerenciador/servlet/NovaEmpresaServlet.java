@@ -7,27 +7,27 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
- 	
-	@WebServlet("/novaEmpresa")
-	public class NovaEmpresaServlet extends HttpServlet {
+
+@WebServlet(urlPatterns = "/novaEmpresa")
+public class NovaEmpresaServlet extends HttpServlet {
+
+	
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException {
 		
-		private static final long serialVersionUID = 1L;
-		
-		protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-				throws ServletException, IOException {
-			System.out.println("Cadastrando nova empresa");
-			
-			String nomeEmpresa = request.getParameter("nome");
-			Empresa empresa = new Empresa();
-			empresa.setNome(nomeEmpresa);
-			
-			Banco banco = new Banco();
-			banco.adiciona(empresa);
- 			
-			PrintWriter out = response.getWriter();
-			out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
-		}
+		System.out.println("Cadastrando nova empresa");
+
+		String nomeEmpresa = req.getParameter("nome");
+		Empresa empresa = new Empresa();
+		empresa.setNome(nomeEmpresa);
+
+		Banco banco = new Banco();
+		banco.adiciona(empresa);
+
+		PrintWriter out = res.getWriter();
+		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
+	}
 }
