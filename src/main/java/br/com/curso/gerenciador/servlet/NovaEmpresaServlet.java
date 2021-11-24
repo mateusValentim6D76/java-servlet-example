@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 
-	
-
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
@@ -28,6 +26,5 @@ public class NovaEmpresaServlet extends HttpServlet {
 		banco.adiciona(empresa);
 
 		PrintWriter out = res.getWriter();
-		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
 	}
 }
