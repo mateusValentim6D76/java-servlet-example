@@ -14,7 +14,7 @@ public class Banco {
 		  Banco.lista.add(empresa2);
 		}
 	
-	private static List<Empresa> lista = new ArrayList();
+	private static List<Empresa> lista = new ArrayList<Empresa>();
 	
 	public void adiciona(Empresa empresa) {
 		lista.add(empresa);
