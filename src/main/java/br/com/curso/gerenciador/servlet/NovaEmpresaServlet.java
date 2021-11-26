@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class NovaEmpresaServlet extends HttpServlet {
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse res)
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
 		System.out.println("Cadastrando nova empresa");
@@ -28,6 +28,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		//Chamando o JSP
 		RequestDispatcher rd = req.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		req.setAttribute("empresa", empresa.getNome());
 		rd.forward(req, res);
 
 	}
