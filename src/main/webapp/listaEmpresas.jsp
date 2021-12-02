@@ -18,10 +18,12 @@
 		Nenhuma empresa cadastrada
 	</c:if>
 	
-	Lista de empresas: <br />
+	<br>Lista de empresas: <br />
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
+		
 			<li>${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura }" pattern="dd/MM/yyyy"/> </li>
+			<a href="/gerenciador/removeEmpresa?id=${empresa.id}">Remover</a>
 		</c:forEach>
 	</ul>
 </body>
