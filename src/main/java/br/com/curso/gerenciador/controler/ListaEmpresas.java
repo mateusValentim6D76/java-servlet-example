@@ -14,10 +14,7 @@ import br.com.curso.gerenciador.model.Empresa;
 public class ListaEmpresas {
 
 	protected void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String paramAcao = request.getParameter("acao");
-
-		if (paramAcao.equals("listando empresas")) {
+		
 			Banco banco = new Banco();
 			List<Empresa> listaEmpresas = banco.getEmpresa();
 
@@ -25,6 +22,5 @@ public class ListaEmpresas {
 
 			RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
 			rd.forward(request, response);
-		}
 	}
 }
