@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.curso.gerenciador.model.Banco;
+import br.com.curso.gerenciador.model.Empresa;
+
 @WebServlet("/alteraEmpresa")
 public class AlteraEmpresaServlet extends HttpServlet {
 
