@@ -13,7 +13,7 @@ import br.com.curso.gerenciador.model.Empresa;
 
 public class ListaEmpresas {
 
-	protected void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			Banco banco = new Banco();
 			List<Empresa> listaEmpresas = banco.getEmpresa();
