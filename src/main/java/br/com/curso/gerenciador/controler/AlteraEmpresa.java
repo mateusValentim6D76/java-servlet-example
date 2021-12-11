@@ -1,4 +1,4 @@
-package br.com.curso.gerenciador.servlet;
+package br.com.curso.gerenciador.controler;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,19 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.curso.gerenciador.model.Banco;
 import br.com.curso.gerenciador.model.Empresa;
 
-@WebServlet("/alteraEmpresa")
-public class AlteraEmpresaServlet extends HttpServlet {
+public class AlteraEmpresa {
 
-	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-		System.out.println("Alterando empresa");
+	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
 
 		
-		String nomeEmpresa = req.getParameter("nome");
-		String paramDataEmpresa = req.getParameter("data");
-		String paramId = req.getParameter("id");
+		String nomeEmpresa = request.getParameter("nome");
+		String paramDataEmpresa = request.getParameter("data");
+		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 
+		System.out.println("acao Alterando empresa" + id);
+		
 		Date dataAbertura = null;
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -40,9 +39,6 @@ public class AlteraEmpresaServlet extends HttpServlet {
 		empresa.setNome(nomeEmpresa); 
 		empresa.setDataAbertura(dataAbertura);
 		
-		res.sendRedirect("listaEmpresas");
-		
+		response.sendRedirect("entrada?acao=ListaEmpresas");
 	}
-	                                                                                       
 }
-

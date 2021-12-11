@@ -14,13 +14,14 @@ import br.com.curso.gerenciador.model.Empresa;
 public class ListaEmpresas {
 
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-			Banco banco = new Banco();
-			List<Empresa> listaEmpresas = banco.getEmpresa();
+		System.out.println("Listando empresas");
 
-			request.setAttribute("empresas", listaEmpresas);
+		Banco banco = new Banco();
+		List<Empresa> listaEmpresas = banco.getEmpresa();
 
-			RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
-			rd.forward(request, response);
+		request.setAttribute("empresas", listaEmpresas);
+
+		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
+		rd.forward(request, response);
 	}
 }
