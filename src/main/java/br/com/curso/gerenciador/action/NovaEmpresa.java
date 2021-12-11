@@ -1,4 +1,4 @@
-package br.com.curso.gerenciador.controler;
+package br.com.curso.gerenciador.action;
 
 import java.io.IOException;
 import java.text.ParseException;

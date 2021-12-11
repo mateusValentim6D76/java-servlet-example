@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.curso.gerenciador.controler.AlteraEmpresa;
-import br.com.curso.gerenciador.controler.ListaEmpresas;
-import br.com.curso.gerenciador.controler.MostraEmpresa;
-import br.com.curso.gerenciador.controler.NovaEmpresa;
-import br.com.curso.gerenciador.controler.RemoveEmpresa;
+import br.com.curso.gerenciador.action.AlteraEmpresa;
+import br.com.curso.gerenciador.action.ListaEmpresas;
+import br.com.curso.gerenciador.action.MostraEmpresa;
+import br.com.curso.gerenciador.action.NovaEmpresa;
+import br.com.curso.gerenciador.action.RemoveEmpresa;
 
 @WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
