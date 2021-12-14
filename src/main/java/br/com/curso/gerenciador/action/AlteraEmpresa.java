@@ -15,7 +15,7 @@ import br.com.curso.gerenciador.model.Empresa;
 
 public class AlteraEmpresa {
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 
 		
@@ -39,6 +39,6 @@ public class AlteraEmpresa {
 		empresa.setNome(nomeEmpresa); 
 		empresa.setDataAbertura(dataAbertura);
 		
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresas";
 	}
 }

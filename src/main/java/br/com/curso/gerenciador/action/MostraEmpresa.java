@@ -13,7 +13,7 @@ import br.com.curso.gerenciador.model.Empresa;
 
 public class MostraEmpresa {
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		System.out.println("Exibindo empresa");
 
@@ -28,7 +28,6 @@ public class MostraEmpresa {
 
 		request.setAttribute("empresa", empresa);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");
-		rd.forward(request, response);
+		return "forward:formAlteraEmpresa.jsp";
 	}
 }
