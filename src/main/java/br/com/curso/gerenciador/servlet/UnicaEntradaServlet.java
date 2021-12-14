@@ -13,6 +13,7 @@ import br.com.curso.gerenciador.action.AlteraEmpresa;
 import br.com.curso.gerenciador.action.ListaEmpresas;
 import br.com.curso.gerenciador.action.MostraEmpresa;
 import br.com.curso.gerenciador.action.NovaEmpresa;
+import br.com.curso.gerenciador.action.NovaEmpresaForm;
 import br.com.curso.gerenciador.action.RemoveEmpresa;
 
 @WebServlet("/entrada")
@@ -39,10 +40,13 @@ public class UnicaEntradaServlet extends HttpServlet {
 		} else if (paramAcao.equals("NovaEmpresa")) {
 			NovaEmpresa novaEmpresa = new NovaEmpresa();
 			nome = novaEmpresa.executa(request, response);
+		}else if (paramAcao.equals("NovaEmpresaForm")) {
+			NovaEmpresaForm novaEmpresaForm = new NovaEmpresaForm();
+			nome = novaEmpresaForm.executa(request, response);
 		}
 		String[] tipo_Endereco = nome.split(":");
 		if (tipo_Endereco[0].equals("forward")) {
-			RequestDispatcher rd = request.getRequestDispatcher(tipo_Endereco[1]);
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/" + tipo_Endereco[1]);
 			rd.forward(request, response);
 		} else
 			response.sendRedirect(tipo_Endereco[1]);
