@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.curso.gerenciador.model.Banco;
 import br.com.curso.gerenciador.model.Empresa;
 
-public class ListaEmpresas {
+public class ListaEmpresas implements Acao {
 
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Listando empresas");

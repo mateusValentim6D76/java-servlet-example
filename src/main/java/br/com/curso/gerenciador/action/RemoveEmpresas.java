@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.curso.gerenciador.model.Banco;
 
-public class RemoveEmpresa {
+public class RemoveEmpresas implements Acao{
 
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.println("acao removendo empresa");
