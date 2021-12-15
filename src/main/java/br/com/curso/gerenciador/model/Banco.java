@@ -18,6 +18,14 @@ public class Banco {
 		empresa2.setNome("Caelum");
 		Banco.lista.add(empresa);
 		Banco.lista.add(empresa2);
+		
+		Usuario u1 = new Usuario();
+		u1.setLogin("mateus");
+		u1.setSenha("1234");
+		
+		Usuario u2 = new Usuario();
+		u2.setLogin("helena");
+		u2.setSenha("1234");
 	}
 
 	public void adiciona(Empresa empresa) {
