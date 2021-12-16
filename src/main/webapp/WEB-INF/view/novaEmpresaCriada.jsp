@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
 String nomeEmpresa = (String) request.getAttribute("empresa");
@@ -6,10 +6,11 @@ String nomeEmpresa = (String) request.getAttribute("empresa");
 
 <html>
 <body>
+	<c:import url="logout-parcial.jsp"/>
 	<c:if test="${not empty empresa}">
 	Empresa ${empresa} cadastrada com sucesso!
 	</c:if>
-	
+
 	<c:if test="${ empty empresa}">
 		Nenhuma empresa cadastrada
 	</c:if>

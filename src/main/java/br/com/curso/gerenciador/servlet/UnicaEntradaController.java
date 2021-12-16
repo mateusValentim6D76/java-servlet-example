@@ -23,11 +23,12 @@ public class UnicaEntradaController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String paramAcao = request.getParameter("acao");
 		
 		HttpSession sessao = request.getSession();
 		boolean usuarioNaoLogado = (sessao.getAttribute("usuarioLogado") == null);
-		boolean eUmaAcaoProtegida = !(paramAcao.equals("login") || paramAcao.equals("LoginForm"));
+		boolean eUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
 		
 		if(eUmaAcaoProtegida && usuarioNaoLogado) {
 			response.sendRedirect("entrada?acao=LoginForm");	
