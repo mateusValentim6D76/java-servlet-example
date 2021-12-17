@@ -12,6 +12,11 @@ import javax.servlet.annotation.WebFilter;
 //@WebFilter("/entrada")
 public class MonitoramentoFilter implements Filter {
 
+	@Override
+	public void init(FilterConfig filterConfig) {}
+	
+	@Override
+	public void destroy() {}
    
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		

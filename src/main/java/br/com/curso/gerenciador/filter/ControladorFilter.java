@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -13,16 +14,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.curso.gerenciador.action.Acao;
 
-public class ControladorFilter implements Filter{
+public class ControladorFilter implements Filter {
 
 	@Override
-	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws ServletException, IOException {
-		
+	public void init(FilterConfig filterConfig) {
+	}
+
+	@Override
+	public void destroy() {
+	}
+
+	@Override
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
+			throws ServletException, IOException {
+
 		System.out.println("Controlador Filter");
-		
+
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
-		
+
 		String paramAcao = request.getParameter("acao");
 		String nomeDaClasse = "br.com.curso.gerenciador.action." + paramAcao;
 		String nome;
@@ -40,6 +50,6 @@ public class ControladorFilter implements Filter{
 			rd.forward(request, response);
 		} else {
 			response.sendRedirect(tipo_Endereco[1]);
-		}		
-	}	
+		}
+	}
 }
